@@ -3,7 +3,7 @@
         'name' => 'renatopablo/ecommerce',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0a81fb1521ba286f1e35ebee59eb2521a7bf0d62',
+        'reference' => 'e19cbed52cd4a81779e2c1d2b95724d2a341c39f',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'renatopablo/ecommerce' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0a81fb1521ba286f1e35ebee59eb2521a7bf0d62',
+            'reference' => 'e19cbed52cd4a81779e2c1d2b95724d2a341c39f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
