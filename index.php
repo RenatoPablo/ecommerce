@@ -1,5 +1,14 @@
 <?php 
 
+session_start(); 
+
+// Hackzinho só pra evitar o erro com PHP moderno
+if (!function_exists('get_magic_quotes_gpc')) {
+    function get_magic_quotes_gpc() {
+        return false;
+    }
+}
+
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
@@ -20,6 +29,8 @@ $app->get('/', function() {
 });
 
 $app->get('/admin', function() {
+
+	User::verifyLogin();
     
 	$page = new PageAdmin();
 
