@@ -57,9 +57,22 @@ class User extends Model
             (bool)$_SESSION[User::SESSION]["inadmin"] !== $inadmin
         )
         {
+            echo "esta dentro da condição";
             header("Location: /admin/login");
             exit;
         }
+        else
+        {
+           
+        }
+    }
+
+    public static function logout()
+    {
+         
+        $_SESSION[User::SESSION] = NULL;
+        
+
     }
 
 }
