@@ -66,6 +66,68 @@ $app->get('/admin/logout', function(){
 	exit;
 });
 
+//Rote for list Users
+$app->get('/admin/users', function(){
+	
+	User::verifyLogin();
+
+	$users = User::listAll();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users", array(
+		"users"=>$users
+	));
+});
+
+//Rote for create Users
+$app->get('/admin/users/create', function(){
+	
+	User::verifyLogin();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users-create");
+});
+
+//Rote for delete Users
+$app->get('/admin/user/otario/:iduser', function(){
+
+	User::verifyLogin();
+	
+});
+
+//Rote for update Users
+$app->get('/admin/users/:iduser', function($iduser){
+	
+	User::verifyLogin();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users-update");
+});
+
+//Rote for confirm create Users
+$app->post('/admin/users/create', function(){
+
+	User::verifyLogin();
+
+	$user = new User();
+
+	$user->setData($_POST);
+
+	var_dump($user);
+
+});
+
+//Rote for confirm create Users
+$app->post('/admin/users/:iduser', function($iduser){
+
+	User::verifyLogin();
+	
+});
+
+
 
 $app->run();
 
